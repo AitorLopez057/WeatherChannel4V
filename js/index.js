@@ -125,10 +125,9 @@ $(document).ready(function () {
                 let listaRespuestas = respuesta.list;
 
                 for (let i = 0; i < listaRespuestas.length; i++) {
-
                     $('#humedad' + i).text(Math.round(listaRespuestas[i].main.humidity) + "%");
                     $('#icono' + i).append(`
-                        <img src="http://openweathermap.org/img/wn/${listaRespuestas[i].main.icon}@2x.png"></img>
+                        <img height="40px" width="40px" src="http://openweathermap.org/img/wn/${listaRespuestas[i].weather[0].icon}@2x.png"></img>
                     `);
                     $('#tempMax' + i).text(Math.round(listaRespuestas[i].main.temp_max) + "°");
                     $('#tempMin' + i).text(Math.round(listaRespuestas[i].main.temp_min) + "°");
@@ -295,7 +294,9 @@ $(document).ready(function () {
                 let listaRespuestas = respuesta.list;
                 for (let i = 0; i < listaRespuestas.length; i++) {
                     $('#humedadBuscado' + i).text(Math.round(listaRespuestas[i].main.humidity) + "%");
-                    $('#iconoBuscado' + i).attr("src", `http://openweathermap.org/img/w/${listaRespuestas[i].weather.icon}.png`);
+                    $('#iconoBuscado' + i).attr('src', `http://openweathermap.org/img/wn/${listaRespuestas[i].weather[0].icon}@2x.png`);
+                    $('#iconoBuscado' + i).attr('height', `40px`);
+                    $('#iconoBuscado' + i).attr('width', `40px`);
                     $('#tempMaxBuscado' + i).text(Math.round(listaRespuestas[i].main.temp_max) + "°");
                     $('#tempMinBuscado' + i).text(Math.round(listaRespuestas[i].main.temp_min) + "°");
                 }
