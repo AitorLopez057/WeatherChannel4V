@@ -9,7 +9,11 @@ $(document).ready(function () {
 
     // SECCIÓN UBICACIÓN ACTUAL
     // Preguntamos al usuario por su ubicación
-    navigator.geolocation.getCurrentPosition(geolocalizacionPermitida);
+    navigator.geolocation.getCurrentPosition(geolocalizacionPermitida, geolocalizacionNoPermitida);
+
+    function geolocalizacionNoPermitida() {
+        alert("Debe permitir la ubicación para poder utilizar el servicio");
+    }
 
     // Sin nos permite almacenar su ubicación, sacamos su longitud y latidud
     function geolocalizacionPermitida(position) {
@@ -91,6 +95,10 @@ $(document).ready(function () {
                     lugarActual = lugar.name
                     $('#lugar').text(lugarActual)
                 });
+            },
+
+            error: function () {
+                alert("Ha habido un problema la petición");
             }
         });
 
@@ -111,6 +119,10 @@ $(document).ready(function () {
                 $('#humedadActual').text(Math.round(respuesta.main.humidity) + "%")
                 $('#vientoActual').text(Math.round(respuesta.wind.speed) + "KM/H")
                 $('#visibilidadActual').text(Math.round(respuesta.visibility) + "m")
+            },
+
+            error: function () {
+                alert("Ha habido un problema la petición");
             }
         });
 
@@ -133,6 +145,10 @@ $(document).ready(function () {
                     $('#tempMin' + i).text(Math.round(listaRespuestas[i].main.temp_min) + "°");
                 }
 
+            },
+
+            error: function () {
+                alert("Ha habido un problema la petición");
             }
         });
 
@@ -172,6 +188,10 @@ $(document).ready(function () {
                     });
                 }
             },
+
+            error: function () {
+                alert("Ha habido un problema la petición");
+            }
         });
     });
 
@@ -266,6 +286,10 @@ $(document).ready(function () {
                     lugarActual = lugar.name
                     $('#lugarBuscado').text(lugarActual)
                 });
+            },
+
+            error: function () {
+                alert("Ha habido un problema la petición");
             }
         });
 
@@ -283,6 +307,10 @@ $(document).ready(function () {
                 $('#humedadActualBuscado').text(Math.round(respuesta.main.humidity) + "%")
                 $('#vientoActualBuscado').text(Math.round(respuesta.wind.speed) + "KM/H")
                 $('#visibilidadActualBuscado').text(Math.round(respuesta.visibility) + "m")
+            },
+
+            error: function () {
+                alert("Ha habido un problema la petición");
             }
         });
 
@@ -300,6 +328,10 @@ $(document).ready(function () {
                     $('#tempMaxBuscado' + i).text(Math.round(listaRespuestas[i].main.temp_max) + "°");
                     $('#tempMinBuscado' + i).text(Math.round(listaRespuestas[i].main.temp_min) + "°");
                 }
+            },
+
+            error: function () {
+                alert("Ha habido un problema la petición");
             }
         });
 
