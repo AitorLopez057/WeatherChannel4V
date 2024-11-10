@@ -1,26 +1,14 @@
-// Mixin para el contenedor
-@mixin container($padding: $padding-base) {
-    padding: $padding;
-    background-color: $background-color;
-    border-radius: $border-radius;
-    color: $text-color-primary;
-  }
-  
-  // Mixin para el texto
-  @mixin text-style($color: $text-color-primary, $size: $font-size-base, $weight: normal) {
-    color: $color;
-    font-size: $size;
-    font-weight: $weight;
-  }
-  
-  // Mixin para iconos
-  @mixin icon-size($size: $icon-size) {
-    width: $size;
-    height: $size;
-  }
-  
-  // Mixin para sombra
-  @mixin box-shadow($color: rgba(0, 0, 0, 0.2), $blur: 10px, $spread: 2px) {
-    box-shadow: 0 4px $blur $spread $color;
-  }
-  
+// Mixin para el degradado de fondo
+@mixin gradient-background($color1, $color2) {
+  background: linear-gradient(135deg, $color1, $color2);
+}
+
+// Mixin para la sombra de caja
+@mixin box-shadow($color: rgba(0, 0, 0, 0.1), $x: 0, $y: 4px, $blur: 10px) {
+  box-shadow: $x $y $blur $color;
+}
+
+// Mixin para bordes redondeados
+@mixin rounded-corners($radius: 10px) {
+  border-radius: $radius;
+}

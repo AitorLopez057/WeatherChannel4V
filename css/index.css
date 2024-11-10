@@ -1,35 +1,84 @@
+@charset "UTF-8";
 body {
-  background: linear-gradient(to bottom, #7b5bb2, #a8c2e0);
-  color: white;
-  font-family: Arial, sans-serif;
+  background: linear-gradient(135deg, #4b5d96, #9166c5);
 }
 
-.temperature {
-  font-size: 4rem;
-  font-weight: bold;
-  color: white;
-}
-
-.weather-info, .footer-info {
-  background: rgba(175, 175, 175, 0.1);
-  border-radius: 15px;
-  padding: 20px;
+.current-weather {
   color: #ffffff;
+  text-align: center;
+}
+.current-weather #current-city {
+  font-size: 2rem;
+  font-weight: bold;
+  margin: 0;
+}
+.current-weather .temperature {
+  font-size: 3rem;
+  font-weight: bold;
+  margin: 0.5rem 0;
+}
+.current-weather .feels-like {
+  font-size: 1.2rem;
+  color: white;
+  margin: 0;
+}
+
+.weather-card {
+  border-radius: 15px;
+  color: #d1d5e0;
+  padding: 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+.weather-card .header {
+  font-size: 1.2rem;
   font-weight: bold;
 }
-
-.col {
-  font-size: 20px;
+.weather-card .day {
+  color: #ffffff;
+  margin-bottom: 8px;
 }
-
-.hourly-forecast {
-  display: flex;
-  justify-content: space-between;
-  font-size: 0.9rem;
+.weather-card .day .col-3 {
+  font-weight: 600;
 }
-
-.icon-small {
+.weather-card .day .col-2,
+.weather-card .day .col-1 {
+  text-align: center;
+}
+.weather-card .day .col-2.text-end {
+  font-weight: bold;
+}
+.weather-card .day .icon {
   font-size: 1.5rem;
+}
+
+.info-card {
+  background-color: #9166c5;
+  border-radius: 10px;
+  color: #ffffff;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+.info-card h5 {
+  font-size: 1.1rem;
+  margin-bottom: 5px;
+}
+.info-card p {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin: 0;
+}
+
+.language-switcher {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+.language-switcher a img {
+  width: 50px; /* Ajusta el tamaño de los iconos según prefieras */
+  height: 50px;
+  margin-left: 8px;
+  cursor: pointer;
 }
 
 /*# sourceMappingURL=index.css.map */

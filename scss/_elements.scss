@@ -1,30 +1,106 @@
-body {
-    background: linear-gradient(to bottom, #7b5bb2, #a8c2e0);
-    color: white;
-    font-family: Arial, sans-serif;
-    
+// Importamos variables y mixins
+@import 'variables';
+@import 'mixins';
+
+// Estilos del encabezado de clima actual
+body{
+    @include gradient-background($primary-color, $secondary-color);
 }
-.temperature {
-    font-size: 4rem;
-    font-weight: bold;
-    color:white
+
+.current-weather {
+    color: $white-color;
+    text-align: center;
+
+    // Ciudad
+    #current-city {
+        font-size: 2rem;
+        font-weight: bold;
+        margin: 0;
+    }
+
+    // Temperatura
+    .temperature {
+        font-size: 3rem;
+        font-weight: bold;
+        margin: 0.5rem 0;
+    }
+
+    // Sensación térmica
+    .feels-like {
+        font-size: 1.2rem;
+        color: lighten($text-color, 20%);
+        margin: 0;
+    }
 }
-.weather-info, .footer-info {
-    background: rgba(175, 175, 175, 0.1);
-    border-radius: 15px;
+
+// Tarjeta de clima principal
+.weather-card {
+    @include rounded-corners(15px);
+    color: $text-color;
     padding: 20px;
-    color:$white;
-    font-weight: bold;   
+    @include box-shadow();
+
+    .header {
+        font-size: 1.2rem;
+        font-weight: bold;
+    }
+
+    .day {
+        color: $white-color;
+
+        .col-3 {
+            font-weight: 600;
+        }
+
+        .col-2,
+        .col-1 {
+            text-align: center;
+        }
+
+        .col-2.text-end {
+            font-weight: bold;
+        }
+
+        // Margen entre filas
+        margin-bottom: 8px;
+
+        // Iconos de estado del clima
+        .icon {
+            font-size: 1.5rem;
+        }
+    }
 }
-.col{
-    font-size: $font-size-base;
+
+// Estilos para las tarjetas de información adicional
+.info-card {
+    background-color: $secondary-color;
+    @include rounded-corners();
+    color: $white-color;
+    @include box-shadow();
+    text-align: center;
+
+    h5 {
+        font-size: 1.1rem;
+        margin-bottom: 5px;
+    }
+
+    p {
+        font-size: 1.25rem;
+        font-weight: 600;
+        margin: 0;
+    }
 }
-.hourly-forecast {
-    display: flex;
-    justify-content: space-between;
-    font-size: 0.9rem;
-    
-}
-.icon-small {
-    font-size: 1.5rem;
+
+
+.language-switcher {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+  }
+  
+.language-switcher a img {
+    width: 50px; /* Ajusta el tamaño de los iconos según prefieras */
+    height: 50px;
+    margin-left: 8px;
+    cursor: pointer;
 }
