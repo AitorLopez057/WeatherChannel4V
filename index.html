@@ -144,13 +144,87 @@
             </div>
         </div>
     
+        <div class="container" id="infoUbicacionBuscado">
+            <!-- Encabezado del clima actual -->
+            <div class="current-weather text-center mb-4">
+                <h2 id="lugarBuscado"></h2>
+                <p class="temperature" id="temperaturaBuscado"></p>
+                <p id="temperaturaBuscado">Sensacion termica: <span class="feels-like" id="sensacionTermica"></span></p>
+            </div>
     
+            <!-- Tarjeta principal del pronóstico del clima -->
+            <div class="weather-card p-3">
+                <div class="forecast mt-3">
+                    <div class="day row align-items-center mb-2">
+                        <div class="col-3">Hoy</div>
+                        <div class="col-2 text-center" id="humedadBuscado0"></div>
+                        <div class="col-2 text-center" id="iconoBuscado0"></div>
+                        <div class="col-2 text-end" id="tempMaxBuscado0"></div>
+                        <div class="col-2 text-end" id="tempMinBuscado0"></div>
+                    </div>
     
-
-
-
-
-
+                    <div class="day row align-items-center mb-2">
+                        <div class="col-3" id="diaActualBuscado1"></div>
+                        <div class="col-2 text-center" id="humedadBuscado1"></div>
+                        <div class="col-2 text-center" id="iconoBuscado1"></div>
+                        <div class="col-2 text-end" id="tempMaxBuscado1"></div>
+                        <div class="col-2 text-end" id="tempMinBuscado1"></div>
+                    </div>
+    
+                    <div class="day row align-items-center mb-2">
+                        <div class="col-3" id="diaActualBuscado2"></div>
+                        <div class="col-2 text-center" id="humedadBuscado2"></div>
+                        <div class="col-2 text-center" id="iconoBuscado2"></div>
+                        <div class="col-2 text-end" id="tempMaxBuscado2"></div>
+                        <div class="col-2 text-end" id="tempMinBuscado2"></div>
+                    </div>
+    
+                    <div class="day row align-items-center mb-2">
+                        <div class="col-3" id="diaActualBuscado3"></div>
+                        <div class="col-2 text-center" id="humedadBuscado3"></div>
+                        <div class="col-2 text-center" id="iconoBuscado3"></div>
+                        <div class="col-2 text-end" id="tempMaxBuscado3"></div>
+                        <div class="col-2 text-end" id="tempMinBuscado3"></div>
+                    </div>
+    
+                    <div class="day row align-items-center mb-2">
+                        <div class="col-3" id="diaActualBuscado4"></div>
+                        <div class="col-2 text-center" id="humedadBuscado4"></div>
+                        <div class="col-2 text-center" id="iconoBuscado4"></div>
+                        <div class="col-2 text-end" id="tempMaxBuscado4"></div>
+                        <div class="col-2 text-end" id="tempMinBuscado4"></div>
+                    </div>
+                </div>
+            </div>
+    
+            <!-- Cuadrícula de 2x2 con tarjetas de información adicional -->
+            <div class="row mt-4">
+                <div class="col-md-6 mb-4">
+                    <div class="info-card p-3">
+                        <h5 id="txtPresionBuscado">Presión Atmosférica</h5>
+                        <p id="presionActualBuscado"></p>
+                    </div>
+                </div>
+                <div class="col-md-6 mb-4">
+                    <div class="info-card p-3">
+                        <h5 id="txtHumedadBuscado">Humedad</h5>
+                        <p id="humedadActualBuscado"></p>
+                    </div>
+                </div>
+                <div class="col-md-6 mb-4">
+                    <div class="info-card p-3">
+                        <h5 id="txtVientoBuscado">Viento</h5>
+                        <p id="vientoActualBuscado"></p>
+                    </div>
+                </div>
+                <div class="col-md-6 mb-4">
+                    <div class="info-card p-3">
+                        <h5 id="txtVisibilidadBuscado">Visibilidad</h5>
+                        <p id="visibilidadActualBuscado"></p>
+                    </div>
+                </div>
+            </div>
+        </div>
 
     <script src="./js/weather.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
