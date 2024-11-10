@@ -1,0 +1,30 @@
+body {
+    background: linear-gradient(to bottom, #7b5bb2, #a8c2e0);
+    color: white;
+    font-family: Arial, sans-serif;
+    
+}
+.temperature {
+    font-size: 4rem;
+    font-weight: bold;
+    color:white
+}
+.weather-info, .footer-info {
+    background: rgba(175, 175, 175, 0.1);
+    border-radius: 15px;
+    padding: 20px;
+    color:$white;
+    font-weight: bold;   
+}
+.col{
+    font-size: $font-size-base;
+}
+.hourly-forecast {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.9rem;
+    
+}
+.icon-small {
+    font-size: 1.5rem;
+}
