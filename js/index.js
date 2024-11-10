@@ -36,20 +36,20 @@ $(document).ready(function () {
             $("#txtViento").text('Wind');
             $("#txtVisibilidad").text('Visibility');
         });
-    
+
         $('#btnEspanol').on('click', function (event) {
             dias = ['Domingo', 'Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado'];
             event.preventDefault();
 
             fecha = new Date();
             diaActual = fecha.getDay();
-    
+
             for (let i = 0; i < 5; i++) {
                 let diaIndex = (diaActual + i) % 7;
                 proximosDias = dias[diaIndex];
                 $('#diaActual' + i).text(proximosDias);
             }
-            
+
             $("#txtSensacionTermica").text('Sensación Térmica');
             $("#txtPredicion").text('Prediccion para los próximos 4 días');
             $("#txtPresion").text('Presión');
@@ -64,13 +64,13 @@ $(document).ready(function () {
 
         fecha = new Date();
         diaActual = fecha.getDay();
-    
+
         for (let i = 0; i < 5; i++) {
             let diaIndex = (diaActual + i) % 7;
             proximosDias = dias[diaIndex];
             $('#diaActual' + i).text(proximosDias);
         }
-        
+
         $("#txtSensacionTermica").text('Sensación Térmica');
         $("#txtPredicion").text('Prediccion para los próximos 4 días');
         $("#txtPresion").text('Presión');
@@ -206,7 +206,7 @@ $(document).ready(function () {
             proximosDias = dias[diaIndex];
             $('#diaActualBuscado' + i).text(proximosDias);
         }
-        
+
         $("#txtSensacionTermicaBuscado").text('Sensación Térmica');
         $("#txtPredicionBuscado").text('Prediccion para los próximos 4 días');
         $("#txtPresionBuscado").text('Presión');
@@ -231,20 +231,20 @@ $(document).ready(function () {
             $("#txtVientoBuscado").text('Wind');
             $("#txtVisibilidadBuscado").text('Visibility');
         });
-    
+
         $('#btnEspanol').on('click', function (event) {
             dias = ['Domingo', 'Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado'];
             event.preventDefault();
 
             fecha = new Date();
             diaActual = fecha.getDay();
-    
+
             for (let i = 0; i < 5; i++) {
                 let diaIndex = (diaActual + i) % 7;
                 proximosDias = dias[diaIndex];
                 $('#diaActualBuscado' + i).text(proximosDias);
             }
-            
+
             $("#txtSensacionTermicaBuscado").text('Sensación Térmica');
             $("#txtPredicionBuscado").text('Prediccion para los próximos 4 días');
             $("#txtPresionBuscado").text('Presión');
@@ -255,7 +255,7 @@ $(document).ready(function () {
 
         // Para la predicción de los próximos 4 días, sabiendo el día actual, sacamos los 3 siguientes
 
-        
+
 
         $.ajax({
             url: `http://api.openweathermap.org/geo/1.0/reverse?lat=${coordenadasBuscadas.Latitud}&lon=${coordenadasBuscadas.Longitud}&limit=1&appid=${api}&lang=${lenguaje}`,
