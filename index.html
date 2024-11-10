@@ -12,6 +12,139 @@
 </head>
 
 <body>
+        <!-- Botón para abrir el menú lateral -->
+
+        <div class="language-switcher">
+            <a href="?lang=es">
+                <img src="./images/espana.png" alt="Español" title="Español" id="btnEspanol">
+            </a>
+            <a href="?lang=en">
+                <img src="./images/reino-unido.png" alt="Inglés" title="Inglés" id="btnIngles">
+            </a>
+        </div>
+    
+        <button class="btn" type="button" data-bs-toggle="offcanvas" href="#menuLateral"
+            aria-controls="menuLateral">
+            ☰
+        </button>
+    
+        <!-- Menú Lateral Offcanvas -->
+        <div class="container" id="ubiActual">
+            <div class="offcanvas offcanvas-start" tabindex="-1" id="menuLateral" aria-labelledby="menuLateralLabel">
+                <div class="offcanvas-header">
+                    <h5 class="offcanvas-title" id="menuLateralLabel">Menú</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                </div>
+                <div class="offcanvas-body">
+                    <ul class="list-group">
+                        <li class="list-group-item">
+                            <button id="btnTiempoUbiActual" type="button" class="btn btn-primary">Ver tiempo de Ubicación
+                                Actual</button>
+                        </li>
+                        <li class="list-group-item">
+                            <p>Buscar por alguna ciudad</p>
+                            <div class="input-group flex-nowrap">
+                                <span class="input-group-text" id="addon-wrapping">📍</span>
+                                <input id="placeName" type="text" class="form-control" placeholder="Ubicación"
+                                    aria-label="Username" aria-describedby="addon-wrapping">
+                                <button id="btnBuscar" type="submit" class="btn btn-primary">Buscar</button>
+                            </div>
+    
+                            <div>
+                                <select class="form-select" id="resultadosCiudades">
+                                    <option selected>Elige una ciudad...</option>
+                                </select>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    
+    
+        <div class="container" id="infoMiUbicacion">
+            <!-- Encabezado del clima actual -->
+            <div class="current-weather text-center mb-4">
+                <h2 id="lugar"></h2>
+                <p class="temperature" id="temperatura"></p>
+                <p id="txtSensacionTermica">Sensacion termica: <span class="feels-like" id="sensacionTermica"></span></p>
+            </div>
+    
+            <!-- Tarjeta principal del pronóstico del clima -->
+            <div class="weather-card p-3">
+                <div class="forecast mt-3">
+                    <div class="day row align-items-center mb-2">
+                        <div class="col-3">Hoy</div>
+                        <div class="col-2 text-center" id="humedad0"></div>
+                        <div class="col-2 text-center" id="icono0"></div>
+                        <div class="col-2 text-end" id="tempMax0"></div>
+                        <div class="col-2 text-end" id="tempMin0"></div>
+                    </div>
+    
+                    <div class="day row align-items-center mb-2">
+                        <div class="col-3" id="diaActual1"></div>
+                        <div class="col-2 text-center" id="humedad1"></div>
+                        <div class="col-2 text-center" id="icono1"></div>
+                        <div class="col-2 text-end" id="tempMax1"></div>
+                        <div class="col-2 text-end" id="tempMin1"></div>
+                    </div>
+    
+                    <div class="day row align-items-center mb-2">
+                        <div class="col-3" id="diaActual2"></div>
+                        <div class="col-2 text-center" id="humedad2"></div>
+                        <div class="col-2 text-center" id="icono2"></div>
+                        <div class="col-2 text-end" id="tempMax2"></div>
+                        <div class="col-2 text-end" id="tempMin2"></div>
+                    </div>
+    
+                    <div class="day row align-items-center mb-2">
+                        <div class="col-3" id="diaActual3"></div>
+                        <div class="col-2 text-center" id="humedad3"></div>
+                        <div class="col-2 text-center" id="icono3"></div>
+                        <div class="col-2 text-end" id="tempMax3"></div>
+                        <div class="col-2 text-end" id="tempMin3"></div>
+                    </div>
+    
+                    <div class="day row align-items-center mb-2">
+                        <div class="col-3" id="diaActual4"></div>
+                        <div class="col-2 text-center" id="humedad4"></div>
+                        <div class="col-2 text-center" id="icono4"></div>
+                        <div class="col-2 text-end" id="tempMax4"></div>
+                        <div class="col-2 text-end" id="tempMin4"></div>
+                    </div>
+                </div>
+            </div>
+    
+            <!-- Cuadrícula de 2x2 con tarjetas de información adicional -->
+            <div class="row mt-4">
+                <div class="col-md-6 mb-4">
+                    <div class="info-card p-3">
+                        <h5 id="txtPresion">Presión Atmosférica</h5>
+                        <p id="presionActual"></p>
+                    </div>
+                </div>
+                <div class="col-md-6 mb-4">
+                    <div class="info-card p-3">
+                        <h5 id="txtHumedad">Humedad</h5>
+                        <p id="humedadActual"></p>
+                    </div>
+                </div>
+                <div class="col-md-6 mb-4">
+                    <div class="info-card p-3">
+                        <h5 id="txtViento">Viento</h5>
+                        <p id="vientoActual"></p>
+                    </div>
+                </div>
+                <div class="col-md-6 mb-4">
+                    <div class="info-card p-3">
+                        <h5 id="txtVisibilidad">Visibilidad</h5>
+                        <p id="visibilidadActual"></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+    
     
 
 
